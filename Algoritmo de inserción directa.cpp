@@ -11,7 +11,6 @@ int Arreglo[] = {10, 15, 21, 4, 16, 75, 94, 8};
 int main()
 {
     cout << "<<< Algoritmo de insercion directa >>>\n\n";
-
     InsercionDirecta();
 
     return 0;
@@ -24,13 +23,19 @@ void InsercionDirecta()
         int Actual = Arreglo[i];
         int Anterior = i - 1;
 
+        // Si el índice es >=0, evalúa que elemento es mayor.
         while (Anterior >= 0 && (Arreglo[Anterior] > Actual))
         {
+            // Desplaza el elemento hacia la derecha.
             Arreglo[Anterior + 1] = Arreglo[Anterior];
+
             Anterior--;
         }
+
+        // Coloca el elemento actual en la posición correcta.
         Arreglo[Anterior + 1] = Actual;
 
+        // Imprime cada paso del ordenamiento.
         ImprimirArreglo();
     }
 }
@@ -41,7 +46,7 @@ void ImprimirArreglo()
     {
         cout << "   " << Arreglo[i];
 
-        // Al llegar al último elemento coloca . en lugar de ,
+        // Coloca . en lugar de , en el último elemento.
         if (i < Tamano - 1)
             cout << ',';
         else
