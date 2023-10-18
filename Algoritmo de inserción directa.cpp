@@ -21,15 +21,15 @@ void InsercionDirecta()
 {
     for (int i = 0; i < Tamano; i++)
     {
-        int Temporal = Arreglo[i];
-        int j = i - 1;
+        int Actual = Arreglo[i];
+        int Anterior = i - 1;
 
-        while (j >= 0 && Arreglo[j] > Temporal)
+        while (Anterior >= 0 && (Arreglo[Anterior] > Actual))
         {
-            Arreglo[j + 1] = Arreglo[j];
-            j = j - 1;
+            Arreglo[Anterior + 1] = Arreglo[Anterior];
+            Anterior--;
         }
-        Arreglo[j + 1] = Temporal;
+        Arreglo[Anterior + 1] = Actual;
 
         ImprimirArreglo();
     }
